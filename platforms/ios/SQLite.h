@@ -15,6 +15,7 @@
 
 #import <React/RCTBridgeModule.h>
 
+
 // Used to remove dependency on sqlite3.h in this header:
 struct sqlite3;
 

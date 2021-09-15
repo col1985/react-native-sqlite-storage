@@ -23,6 +23,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
 
+
 /*
  * Copyright (C) 2015-Present Andrzej Porebski
  * Copyright (C) 2012-2015 Chris Brody
@@ -32,7 +33,9 @@
  * See http://opensource.org/licenses/alphabetical for full text.
  */
 
-#import "sqlite3.h"
+#import "sqlite3ext.h"
+
+#include "extension-functions.h"
 
 #include <regex.h>
 
@@ -453,6 +456,21 @@ RCT_EXPORT_METHOD(backgroundExecuteSql: (NSDictionary *) options success:(RCTRes
   }];
 }
 
+RCT_EXPORT_METHOD(runMethod:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error)
+{
+  // NSMutableDictionary *dbargs = options[@"dbargs"];
+  // NSMutableDictionary *ex = options[@"ex"];
+//  NSString* Name = @"Hello from runMethod";
+  RCTLog(@"HEllo from runMethod SQLite.m");
+
+  // SQLiteResult* pluginResult;
+  // @synchronized (self) {
+  //   pluginResult = ;
+  // }
+
+//  success(@Name);
+}
+
 RCT_EXPORT_METHOD(executeSql: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error)
 {
   NSMutableDictionary *dbargs = options[@"dbargs"];
@@ -732,21 +750,6 @@ RCT_EXPORT_METHOD(executeSql: (NSDictionary *) options success:(RCTResponseSende
 + (BOOL)requiresMainQueueSetup
 {
   return YES;
-}
-
-RCT_EXPORT_METHOD(runMethod: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error)
-{
-  // NSMutableDictionary *dbargs = options[@"dbargs"];
-  // NSMutableDictionary *ex = options[@"ex"];
-  NSString* Name = @"Hello from runMethod";
-  RCTLog(@"No db name specified for delete");
-
-  // SQLiteResult* pluginResult;
-  // @synchronized (self) {
-  //   pluginResult = ;
-  // }
-
-  success(@Name);
 }
 
 @end /* vim: set expandtab : */

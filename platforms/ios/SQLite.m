@@ -33,9 +33,7 @@
  * See http://opensource.org/licenses/alphabetical for full text.
  */
 
-#import "sqlite3ext.h"
-
-#include "extension-functions.h"
+#import "sqlite3.h"
 
 #include <regex.h>
 

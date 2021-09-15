@@ -50,6 +50,7 @@ typedef int WebSQLError;
 // Single requests interface
 -(void) backgroundExecuteSql:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 -(void) executeSql:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
+-(void) runMethod:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 
 // Echo Test
 -(void) echoStringValue:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;

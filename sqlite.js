@@ -22,6 +22,7 @@ var config = [
   [false,"SQLitePlugin","attach",true,false,true],
   [false,"SQLitePlugin","detach",false,false,true],
   [false,"SQLitePluginTransaction","executeSql",true,false,false],
+  [false,"SQLitePluginTransaction","runMethod",true,false,false],
   [false,"SQLiteFactory","deleteDatabase",false,false,true],
   [true, "SQLiteFactory","openDatabase",false,false,true],
   [false,"SQLiteFactory","echoTest",false,false,true]

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		304E7A7026F229D20095A820 /* extension-functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 304E7A6F26F229D20095A820 /* extension-functions.m */; };
+		30CF151626F8C1FE0054ED4E /* custom-math.h in Headers */ = {isa = PBXBuildFile; fileRef = 30CF151426F8C1FE0054ED4E /* custom-math.h */; };
+		30CF151726F8C1FE0054ED4E /* custom-math.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CF151526F8C1FE0054ED4E /* custom-math.m */; };
 		C7DCD6E41BE0295900F3300E /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DCD6E21BE0295900F3300E /* SQLite.h */; };
 		C7DCD6E51BE0295A00F3300E /* SQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DCD6E31BE0295900F3300E /* SQLite.m */; };
 		C7DCD7141BE2D5DE00F3300E /* SQLiteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DCD7131BE2D5DE00F3300E /* SQLiteResult.m */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		304E7A6F26F229D20095A820 /* extension-functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "extension-functions.m"; sourceTree = "<group>"; };
+		30CF151426F8C1FE0054ED4E /* custom-math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "custom-math.h"; sourceTree = "<group>"; };
+		30CF151526F8C1FE0054ED4E /* custom-math.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "custom-math.m"; sourceTree = "<group>"; };
 		C7DCD6E21BE0295900F3300E /* SQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite.h; sourceTree = "<group>"; };
 		C7DCD6E31BE0295900F3300E /* SQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLite.m; sourceTree = "<group>"; };
 		C7DCD7131BE2D5DE00F3300E /* SQLiteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteResult.m; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		C7DCD6E11BE0293D00F3300E /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				30CF151426F8C1FE0054ED4E /* custom-math.h */,
+				30CF151526F8C1FE0054ED4E /* custom-math.m */,
 				304E7A6F26F229D20095A820 /* extension-functions.m */,
 				C7DCD6E21BE0295900F3300E /* SQLite.h */,
 				C7DCD6E31BE0295900F3300E /* SQLite.m */,
@@ -83,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DCD6E41BE0295900F3300E /* SQLite.h in Headers */,
+				30CF151626F8C1FE0054ED4E /* custom-math.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +153,7 @@
 			files = (
 				C7DCD7141BE2D5DE00F3300E /* SQLiteResult.m in Sources */,
 				304E7A7026F229D20095A820 /* extension-functions.m in Sources */,
+				30CF151726F8C1FE0054ED4E /* custom-math.m in Sources */,
 				C7DCD6E51BE0295A00F3300E /* SQLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

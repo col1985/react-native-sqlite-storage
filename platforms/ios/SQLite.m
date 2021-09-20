@@ -456,17 +456,40 @@ RCT_EXPORT_METHOD(backgroundExecuteSql: (NSDictionary *) options success:(RCTRes
 
 RCT_EXPORT_METHOD(runMethod:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error)
 {
-  // NSMutableDictionary *dbargs = options[@"dbargs"];
-  // NSMutableDictionary *ex = options[@"ex"];
-//  NSString* Name = @"Hello from runMethod";
-  RCTLog(@"HEllo from runMethod SQLite.m");
 
-  // SQLiteResult* pluginResult;
-  // @synchronized (self) {
-  //   pluginResult = ;
-  // }
+  NSMutableArray *results = [NSMutableArray arrayWithCapacity:0];
+  NSMutableDictionary *dbargs = options[@"dbargs"];;
+  NSMutableArray *executes = options[@"executes"];
+  SQLiteResult* pluginResult;
 
-//  success(@Name);
+  @synchronized (self) {
+
+      for (NSMutableDictionary *dict in executes) {
+        SQLiteResult *result = [self executeSqlWithDict:dict andArgs:dbargs];
+        if ([result.status intValue] == SQLiteStatus_ERROR) {
+            RCTLog(@"runMethod:error");
+          /* add error with result.message: */
+          NSMutableDictionary *r = [NSMutableDictionary dictionaryWithCapacity:4];
+          [r setObject:dict[@"qid"] forKey:@"qid"];
+          [r setObject:@"error" forKey:@"type"];
+          [r setObject:result.message forKey:@"error"];
+          [r setObject:result.message forKey:@"result"];
+          [results addObject: r];
+        } else {
+            RCTLog(@"runMethod:success");
+          /* add result with result.message: */
+          NSMutableDictionary *r = [NSMutableDictionary dictionaryWithCapacity:3];
+          [r setObject:dict[@"qid"] forKey:@"qid"];
+          [r setObject:@"success" forKey:@"type"];
+          [r setObject:result.message forKey:@"result"];
+          [results addObject: r];
+        }
+      }
+
+      pluginResult = [SQLiteResult resultWithStatus:SQLiteStatus_OK messageAsArray:results];
+  }
+
+    success(@[pluginResult.message]);
 }
 
 RCT_EXPORT_METHOD(executeSql: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error)
